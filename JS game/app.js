@@ -2,37 +2,43 @@
 Правила игры:
 
 - 2 игрока
-- В каждый ход, игрок делает rolls a dice какое-то количество раз. Каждый результат добавляется к ROUND score
-- BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn
-- The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn
-- The first player to reach 100 points on GLOBAL score wins the game
+- Устанавливаем победное количество очков
+- В каждый ход, игрок делает roll a dice какое-то количество раз. Каждый результат добавляется к ROUND score
+- Если у игрока выпадает 1 то его round score обнуляется и ход переходит к другому игроку
+- Если нажать на кнопку Hold то round score добавится к global score и ход переходит к другому игроку
+- Если у игрока  подряд выпало 66 то все его очки обнуляются и ход переходит к другому игроку
+- Первый игрок набравший победное количесвтво очков или больше выигрывает
 
 */
 
-var scores, roundScore, activePlayer, gamePlaying;
+let scores, roundScore, activePlayer, gamePlaying, previousRoll;
 
 init();
 
 /*добавляем к кнопке roll-dice eventlistener - функцию которая ждет событие типа click и исполняет функцию как только произойдет событие */
 document.querySelector('.btn-roll').addEventListener('click', function(){
     if (gamePlaying){
-        // 1.Рандомное число от 1 до 6
-        var dice = Math.floor(Math.random() * 6) + 1;
 
-        // 2.Показать результат
-        var diceDOM = document.querySelector('.dice');
+        let dice = Math.floor(Math.random() * 6) + 1;
+        // Показываем кубик
+        diceDOM = document.querySelector('.dice');
         diceDOM.style.display = 'block';
         diceDOM.src = 'dice-' + dice + '.png';
 
-        //3.Апдейтнуть round score если не выпала единица
-        if (dice > 1){
-            //add score
+        //Если 2 раза выпала 6 то обнуляем счет обнуялем предыдущий ход и меняем игрока
+        if (dice === 6 && previousRoll === 6){
+            scores[activePlayer] = 0;
+            document.getElementById('score-' + activePlayer).textContent = '0';
+            previousRoll = undefined;
+            nextPlayer();
+            return;
+        }else if (dice > 1){
             roundScore += dice;
-            document.querySelector('#current-' + activePlayer).textContent = roundScore;
+            document.getElementById('current-' + activePlayer).textContent = roundScore;
         }else{
-            //next player
             nextPlayer();
         }
+        previousRoll = dice;
     }
 
 });
@@ -46,9 +52,19 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
         //2.Обновить UI
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
+        //Устанавливаем победный счет
+        let input = document.querySelector('.final-score').value;
+        let finalScore;
+
+        if(input){
+            finalScore = input;
+        }else{
+            finalScore = 50;
+        }
+
 
         //3.Проверить выиграл ли игрок
-        if (scores[activePlayer] >= 20){
+        if (scores[activePlayer] >= finalScore){
             document.getElementById('name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
@@ -106,5 +122,4 @@ function init(){
 
     //добавляем active первому игроку
     document.querySelector('.player-0-panel').classList.add('active');
-
 }
