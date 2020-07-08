@@ -1,0 +1,196 @@
+/* Smaller than the 1140px (our row) */
+
+@media only screen and (max-width: 1200px) {
+  .hero-text-box {
+    width: 100%;
+    padding: 0 2%;
+  }
+  .row {
+    padding: 0 2%;
+  }
+}
+
+/*Small tablet to big tablet: screen from 768px to 1023px */
+
+@media only screen and (max-width: 1023px) {
+  body {
+    font-size: 18px;
+  }
+  section {
+    padding: 60px 0;
+  }
+  .long-copy {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .steps-box {
+    margin-top: 10px;
+  }
+  .steps-box:last-child {
+    margin-top: 10px;
+  }
+  .works-step {
+    margin-bottom: 40px;
+  }
+  .last-step {
+    margin-bottom: 10px;
+  }
+  .app-screen {
+    width: 50%;
+  }
+  .icon-small {
+    width: 17px;
+    margin-right: 5px;
+  }
+  .section-cities {
+    font-size: 90%;
+  }
+  .steps-box:first-child {
+    margin-top: 10px;
+  }
+}
+
+/* Small phones to small tablets: screen from 481px to 767px */
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+  section {
+    padding: 30px 0;
+  }
+  .row,
+  .hero-text-box {
+    padding: 0 4%;
+  }
+  .hero-text-box {
+    font-size: 12px;
+  }
+  .mobile-nav-icon {
+    display: inline-block;
+  }
+  .main-nav {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s;
+    float: left;
+    margin-top: 35px;
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    -ms-transition: height 0.2s;
+    -o-transition: height 0.2s;
+    -webkit-transition: height 0.5s;
+}
+  .main-nav.current {
+    height: 180px;
+  }
+  .main-nav li {
+    display: block;
+  }
+  .main-nav li a:link,
+  .main-nav li a:visited {
+    display: block;
+    border: 0;
+  }
+  .row-span,
+  .rowOfSteps,
+  .rowOfCities,
+  .rowOfCustomers,
+  .rowOfPrice,
+  .containerOfInformation {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+  }
+  .steps-box:first-child {
+    text-align: center;
+    padding-right: 3%;
+    margin-top: 30px;
+  }
+  .customer {
+    margin-bottom: 10px;
+  }
+  .withMargin {
+    margin-bottom: 20px;
+  }
+  .priceContainer {
+    width: 100%;
+  }
+  .form-img {
+    display: none;
+  }
+  input[type="text"],
+  textarea {
+    width: 100%;
+  }
+  .rowOfInput {
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
+  .form-group {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+  input[type="submit"] {
+    display: block;
+    margin-left: 10px;
+  }
+  #last-step {
+    margin-bottom: 40px;
+  }
+  .containerOfInformation {
+    font-size: 12px;
+  }
+  .social-networks {
+    margin-right: 5px;
+    margin-top: 20px;
+  }
+  .s-network {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/*Small phones: screen from 0 to 480px */
+@media only screen and (max-width: 480px) {
+  html,
+  body {
+    width: 100.08%;
+  }
+  .main-nav {
+    margin-top: 45px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .section-steps {
+    display: none;
+  }
+
+  .hero-text-box a {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  .hero-text-box {
+    margin-top: 30px;
+  }
+
+  .logo {
+    height: 100px;
+  }
+
+  .main-nav {
+    margin-top: 35px;
+  }
+
+  .sticky .main-nav {
+    margin-left: 1px;
+  }
+}
