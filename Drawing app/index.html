@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Draw app</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="content">
+    <div class="logo">
+      <p>Draw</p>
+      <p>app</p>
+      <div class="switch-container">
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+    <div class="rowOfColors">
+      <div class="color red" data-color="red"></div>
+      <div class="color green" data-color="#87c38f"></div>
+      <div class="color blue" data-color="#043ba0"></div>
+      <div class="color white" data-color="#ffffff"></div>
+    </div>
+    <div class="main">
+      <div class="wrapper">
+        <div>
+          <div class="chooseBox">
+            <ion-icon name="color-palette-outline" class="colorButton"></ion-icon>
+            <input id="base" type="color" value="#ffc600" />
+          </div>
+          <div class="chooseBox">
+            <ion-icon name="color-wand-outline" class="widthButton"></ion-icon>
+            <input id="width" type="range" min="2" max="10" value="2" data-sizing="px">
+          </div>
+          <div class="chooseBox">
+            <ion-icon name="backspace-outline" class="delete"></ion-icon>
+          </div>
+          <div class="chooseBox">
+            <ion-icon name="arrow-down-circle-outline" class="download"></ion-icon>
+          </div>
+        </div>
+        <div>
+          <canvas id="drawingSketch" width="1200px" height="650px"></canvas>
+        </div>
+    </div>
+  </div>
+  <script src="draw.js"></script>
+  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+</body>
+
+</html>
