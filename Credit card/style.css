@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Saira Condensed", sans-serif;
+  color: white;
+}
+
+body {
+  background-color: rgb(241, 238, 238);
+}
+
+.pay-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Description part */
+
+.order-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.description,
+.price {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.pay-info {
+  margin-top: 150px;
+}
+
+.latte {
+  width: 100px;
+  height: 100px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 210px;
+  height: 50px;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  border-radius: 5%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
+}
+
+/* Payment part */
+
+.scene {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.card-logo {
+  position: absolute;
+  bottom: 7px;
+  right: 7px;
+}
+
+.visa {
+  fill: #fff;
+}
+
+.pay-container__pay-card {
+  position: relative;
+  height: 100%;
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+  background-color: rgb(39, 39, 39);
+  border-radius: 3%;
+  -webkit-border-radius: 3%;
+  -moz-border-radius: 3%;
+  -ms-border-radius: 3%;
+  -o-border-radius: 3%;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-transition: transform 0.4s;
+  -moz-transition: transform 0.4s;
+  -ms-transition: transform 0.4s;
+  -o-transition: transform 0.4s;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.front {
+  width: 100%;
+  height: 100%;
+}
+
+.none {
+  display: none;
+}
+
+.is-flipped {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+
+.number-container {
+  width: 80%;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+}
+
+.number {
+  width: 80%;
+  font-size: 30px;
+  border: none;
+  background-color: rgb(39, 39, 39);
+}
+
+.name-container {
+  position: absolute;
+  top: 60%;
+  left: 10%;
+}
+
+.name {
+  font-size: 25px;
+  border: none;
+  background-color: rgb(39, 39, 39);
+}
+
+.date-container {
+  position: absolute;
+  top: 60%;
+  right: 10%;
+}
+
+.date {
+  font-size: 15px;
+  border: none;
+  background-color: rgb(39, 39, 39);
+}
+
+.code-block {
+  border-radius: 5%;
+  background-color: rgb(212, 211, 211);
+  color: rgb(39, 39, 39);
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
+}
+
+.code {
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  border: none;
+  color: rgb(39, 39, 39);
+  background-color: rgb(212, 211, 211);
+  transform: rotateY(-180deg);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+}

@@ -1,0 +1,75 @@
+@media (max-width: 361px) {
+  .pay-container {
+    flex-direction: column;
+  }
+  .scene {
+    width: 290px;
+    height: 190px;
+  }
+  .pay-info {
+    margin-top: 10px;
+  }
+  .order-container {
+    margin-left: 0;
+  }
+  .name-container {
+    width: 35%;
+  }
+  .number,
+  .name {
+    font-size: 18px;
+    width: 100%;
+  }
+  .card-logo {
+    width: 35px;
+    height: 20px;
+  }
+  .date-container {
+    right: 0%;
+    left: 60%;
+  }
+  .date {
+    width: 30%;
+  }
+}
+
+@media (min-width: 359px) and (max-width: 426px) {
+  .pay-container {
+    flex-direction: column;
+  }
+  .scene {
+    width: 330px;
+    height: 200px;
+  }
+  .order-container {
+    margin-left: 0;
+  }
+  .pay-info {
+    margin-top: 10px;
+  }
+  .name-container {
+    width: 35%;
+  }
+  .number,
+  .name {
+    font-size: 18px;
+    width: 100%;
+  }
+  .card-logo {
+    width: 50px;
+    height: 30px;
+  }
+  .date-container {
+    right: 0%;
+    left: 60%;
+  }
+  .date {
+    width: 30%;
+  }
+}
+
+@media (min-width: 766px) {
+  .scene {
+    font-size: 20px;
+  }
+}
